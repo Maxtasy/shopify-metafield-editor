@@ -1,0 +1,20 @@
+[
+  {
+    "product_id": 1231231233132,
+    "prop-one": "Some data for this product",
+    "prop-two": "Some more data for this product",
+    "some-number-value": 99
+  },
+  {
+    "product_id": 9879897979878,
+    "prop-one": "Some data for this specific product",
+    "prop-two": "Some more data for this specific product",
+    "some-number-value": 123
+  },
+  {
+    "product_id": 4564564564564,
+    "prop-one": "Completely different data just for this product",
+    "prop-two": "Some more completely different data just for this product",
+    "some-number-value": 69
+  }
+]

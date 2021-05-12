@@ -1,0 +1,15 @@
+{
+  "name": "node.js-metafield",
+  "version": "1.0.0",
+  "description": "",
+  "main": "metafield-change.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node add-metafields.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}

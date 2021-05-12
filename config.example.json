@@ -1,0 +1,9 @@
+{
+  "api_key": "API_KEY",
+  "api_password": "API_PASSWORD",
+  "store": "example-store.myshopify.com",
+  "data_file": "example_data.json",
+  "metafield_key": "example",
+  "metafield_namespace": "global",
+  "metafield_value_type": "json_string"
+}
