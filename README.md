@@ -9,4 +9,5 @@ How to use:
 More info on metafields:
 
 https://shopify.dev/docs/themes/liquid/reference/objects/metafield
+
 https://shopify.dev/docs/admin-api/rest/reference/metafield
