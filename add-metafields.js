@@ -9,8 +9,7 @@ const METAFIELD_KEY = config.metafield_key;
 const METAFIELD_NAMESPACE = config.metafield_namespace;
 const METAFIELD_VALUE_TYPE = config.metafield_value_type;
 
-// loop over data elements
-data.forEach((element) => {
+function createMetafield(element) {
   const product_id = element.product_id;
   const value = JSON.stringify(element);
 
@@ -33,4 +32,15 @@ data.forEach((element) => {
     .catch((error) => {
       console.error(error);
     });
-});
+}
+
+let index = 0;
+
+// loop over data elements
+const interval = setInterval(() => {
+  createMetafield(data[index]);
+  index += 1;
+  if (index >= data.length) {
+    clearInterval(interval);
+  }
+}, 500);
