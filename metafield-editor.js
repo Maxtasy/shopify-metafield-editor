@@ -1,0 +1,46 @@
+const config = require("./config.json");
+const axios = require("axios");
+
+const { apiKey, apiPassword, store } = config;
+
+/**
+ * Creates or updates a metafield.
+ *
+ * @param {string} resource The resource type.
+ * @param {number} resourceId The resource ID.
+ * @param {string} key The metafield key.
+ * @param {string} namespace The metafield namespace.
+ * @param {string} type The metafield type.
+ * @param {string} value The value for the metafield.
+ */
+const create = ({ resource, resourceId, key, namespace, type, value }) => {
+  const metafield = {
+    namespace,
+    key,
+    value,
+    type,
+  };
+
+  let path;
+
+  if (!resource) {
+    path = `/admin/api/2021-07/metafields.json`;
+  } else {
+    path = `/admin/api/2021-07/${resource}/${resourceId}/metafields.json`;
+  }
+
+  axios
+    .post(`https://${apiKey}:${apiPassword}@${store}${path}`, {
+      metafield,
+    })
+    .then((res) => {
+      console.log(`Metafield for ${resource}/${resourceId} created.`);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
+module.exports = {
+  create,
+};

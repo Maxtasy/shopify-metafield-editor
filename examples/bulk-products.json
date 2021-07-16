@@ -1,0 +1,26 @@
+[
+  {
+    "productId": 6737741906085,
+    "propOne": "Some data for this product",
+    "propTwo": "Some more data for this product",
+    "someNumberValue": 99
+  },
+  {
+    "productId": 6737744461989,
+    "propOne": "Some data for this product",
+    "propTwo": "Some more data for this product",
+    "someNumberValue": 99
+  },
+  {
+    "productId": 6883349921957,
+    "propOne": "Some data for this product",
+    "propTwo": "Some more data for this product",
+    "someNumberValue": 99
+  },
+  {
+    "productId": 6883350544549,
+    "propOne": "Some data for this product",
+    "propTwo": "Some more data for this product",
+    "someNumberValue": 99
+  }
+]
