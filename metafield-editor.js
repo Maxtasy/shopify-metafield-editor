@@ -1,5 +1,6 @@
 const config = require("./config.json");
 const axios = require("axios");
+const csv = require("csvtojson");
 
 const { apiKey, apiPassword, store } = config;
 
@@ -13,7 +14,7 @@ const { apiKey, apiPassword, store } = config;
  * @param {string} type The metafield type.
  * @param {string} value The value for the metafield.
  */
-const create = ({ resource, resourceId, key, namespace, type, value }) => {
+const create = ({ resource, resourceId, key, namespace, type = "json_string", value }) => {
   const metafield = {
     namespace,
     key,
@@ -41,6 +42,40 @@ const create = ({ resource, resourceId, key, namespace, type, value }) => {
     });
 };
 
+/**
+ * Creates metafields from a csv file.
+ *
+ * @param {string} filePath Path to the csv file.
+ */
+const bulkCreate = (filePath) => {
+  csv({
+    checkType: true,
+  })
+    .fromFile(filePath)
+    .then((metafields) => {
+      let index = 0;
+
+      const interval = setInterval(() => {
+        const { resource, resourceId, key, namespace, type, ...value } = metafields[index];
+
+        create({
+          resource,
+          resourceId,
+          key,
+          namespace,
+          type,
+          value: JSON.stringify(value, null, 2),
+        });
+
+        index += 1;
+        if (index >= metafields.length) {
+          clearInterval(interval);
+        }
+      }, 500);
+    });
+};
+
 module.exports = {
   create,
+  bulkCreate,
 };

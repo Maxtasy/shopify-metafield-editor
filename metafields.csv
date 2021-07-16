@@ -1,0 +1,5 @@
+resource,resourceId,key,namespace,customString,someArray.0.title,someArray.0.body,someArray.1.title,someArray.1.body,someArray.2.title,someArray.2.body,someBoolean,someNumber
+products,6737741906085,meta,data,lorem ipsum,headline 1,loremismumasdad,headline 2,loremismumasdad,headline 3,loremismumasdad,TRUE,512314
+products,6737744461989,meta,data,lorem ipsum,headline 1,loremismumasdad,headline 2,loremismumasdad,headline 3,loremismumasdad,TRUE,512314
+products,6883349921957,meta,data,lorem ipsum,headline 1,loremismumasdad,headline 2,loremismumasdad,headline 3,loremismumasdad,TRUE,512314
+products,6883350544549,meta,data,lorem ipsum,headline 1,loremismumasdad,headline 2,loremismumasdad,headline 3,loremismumasdad,TRUE,512314

@@ -1,0 +1,94 @@
+[
+  {
+    "resource": "products",
+    "resourceId": "1231313212",
+    "key": "meta",
+    "namespace": "data",
+    "customString": "lorem ipsum",
+    "someArray": [
+      {
+        "title": "headline 1",
+        "body": "loremismumasdad"
+      },
+      {
+        "title": "headline 2",
+        "body": "loremismumasdad"
+      },
+      {
+        "title": "headline 3",
+        "body": "loremismumasdad"
+      }
+    ],
+    "someBoolean": "TRUE",
+    "someNumber": "512314"
+  },
+  {
+    "resource": "products",
+    "resourceId": "6545453212",
+    "key": "meta",
+    "namespace": "data",
+    "customString": "lorem ipsum",
+    "someArray": [
+      {
+        "title": "headline 1",
+        "body": "loremismumasdad"
+      },
+      {
+        "title": "headline 2",
+        "body": "loremismumasdad"
+      },
+      {
+        "title": "headline 3",
+        "body": "loremismumasdad"
+      }
+    ],
+    "someBoolean": "TRUE",
+    "someNumber": "512314"
+  },
+  {
+    "resource": "products",
+    "resourceId": "7894564112",
+    "key": "meta",
+    "namespace": "data",
+    "customString": "lorem ipsum",
+    "someArray": [
+      {
+        "title": "headline 1",
+        "body": "loremismumasdad"
+      },
+      {
+        "title": "headline 2",
+        "body": "loremismumasdad"
+      },
+      {
+        "title": "headline 3",
+        "body": "loremismumasdad"
+      }
+    ],
+    "someBoolean": "TRUE",
+    "someNumber": "512314"
+  },
+  {
+    "resource": "products",
+    "resourceId": "9123131445",
+    "key": "meta",
+    "namespace": "data",
+    "customString": "lorem ipsum",
+    "someArray": [
+      {
+        "title": "headline 1",
+        "body": "loremismumasdad"
+      },
+      {
+        "title": "headline 2",
+        "body": "loremismumasdad"
+      },
+      {
+        "title": "headline 3",
+        "body": "loremismumasdad"
+      }
+    ],
+    "someBoolean": "TRUE",
+    "someNumber": "512314"
+  }
+]
