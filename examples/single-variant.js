@@ -1,6 +1,6 @@
 const MetafieldEditor = require("../metafield-editor");
 
-const data = require("../single-variant.json");
+const data = require("./single-variant.json");
 
 const key = "meta";
 const namespace = "data";
