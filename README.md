@@ -1,3 +1,7 @@
+What does this app do?
+
+This app will create/update shopify metafields with the data supplied from a csv file. 
+
 How to use:
 
 1. Create your spreadsheet in the following format
@@ -19,4 +23,5 @@ How to use:
 More info on metafields:
 
 https://shopify.dev/docs/themes/liquid/reference/objects/metafield
+
 https://shopify.dev/docs/admin-api/rest/reference/metafield
