@@ -14,7 +14,7 @@ const { apiKey, apiPassword, store } = config;
  * @param {string} type The metafield type.
  * @param {string} value The value for the metafield.
  */
-const create = ({ resource, resourceId, key, namespace, type = "json_string", value }) => {
+const create = ({ resource, resourceId, key, namespace, type = "json", value }) => {
   const metafield = {
     namespace,
     key,
@@ -35,7 +35,7 @@ const create = ({ resource, resourceId, key, namespace, type = "json_string", va
       metafield,
     })
     .then((res) => {
-      console.log(`Metafield for ${resource}/${resourceId} created.`);
+      console.log(`Metafield for ${resource}/${resourceId} updated.`);
     })
     .catch((error) => {
       console.error(error);

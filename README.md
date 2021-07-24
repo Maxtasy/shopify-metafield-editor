@@ -9,6 +9,7 @@ How to use:
         - resourceId: unique id associated with the resource
         - key
         - namespace
+        - type
 2. Export your spreadsheet as data.csv and put it in the same directory
     - ![CSV Export](https://github.com/maxtasy/shopify-metafield-editor/raw/master/img/csv_export.png)
 3. Rename config.example.json to config.json and enter your details
@@ -16,5 +17,6 @@ How to use:
 5. Execute `npm run create`
 
 More info on metafields:
+
 https://shopify.dev/docs/themes/liquid/reference/objects/metafield
 https://shopify.dev/docs/admin-api/rest/reference/metafield
