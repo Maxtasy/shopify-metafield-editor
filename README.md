@@ -8,7 +8,7 @@ How to use:
     - ![Spreadsheet Template](https://github.com/maxtasy/shopify-metafield-editor/raw/master/img/spreadsheet_template.png)
     - The first row is used to set your keys
     - Each following row should represent a single metafield
-    - The first four columns are reserved for the necessary information about the metafield
+    - The first five columns are reserved for the necessary information about the metafield
         - resource: articles, blogs, collections, customers, orders, pages, products, the shop, variants
         - resourceId: unique id associated with the resource
         - key
