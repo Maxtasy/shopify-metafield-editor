@@ -1,0 +1,2 @@
+resource, resourceId, key, namespace, type, someString, someNumber, someObjectArray.0.firstKey, someObjectArray.0.secondKey, someObjectArray.1.firstKey, someObjectArray.1.secondKey, someObjectArray.2.firstKey, someObjectArray.2.secondKey
+products, 0123456789, meta, data, json, foobar, 42, firstValue, secondValue, firstValue, secondValue, firstValue, secondValue

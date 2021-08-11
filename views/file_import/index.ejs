@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+<body>
+  <%- include("../partials/navigation.ejs") %>
+
+  <main class="PageContent">
+    <% if (metafields) { %>
+      <% for (let i = 0; i < metafields.length; i += 1) { %>
+        <span><%= metafields[i].resource %> </span>
+        <textarea class="TextArea"><%= JSON.stringify(metafields[i], null, 2) %></textarea>
+      <% } %>
+    <% } else { %>
+      <form
+        class="Form"
+        action="file_import"
+        method="post"
+        enctype="multipart/form-data"
+        >
+        <div class="Form__InputWrapper">
+          <label class="Form__Label" for="csv_file">Select your .csv file</label>
+          <input class="Form__Input" type="file" name="csv_file">
+        </div>
+        <button class="Form__Submit">Import</button>
+      </form>
+    <% } %>
+  </main>
+</body>
+</html>
