@@ -24,7 +24,7 @@ const create = ({ resource, resourceId, key, namespace, type = "json", value }) 
 
   let path;
 
-  if (!resource) {
+  if (!resource || resource == "shop") {
     path = `/admin/api/2021-07/metafields.json`;
   } else {
     path = `/admin/api/2021-07/${resource}/${resourceId}/metafields.json`;
