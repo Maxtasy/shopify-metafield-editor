@@ -3,6 +3,8 @@ const axios = require("axios");
 const csv = require("csvtojson");
 
 const { apiKey, apiPassword, store } = config;
+const { getSheetList, getMetafieldsFromGoogle } = require('./google.js')
+
 
 /**
  * Creates or updates a metafield.
@@ -35,7 +37,7 @@ const create = ({ resource, resourceId, key, namespace, type = "json", value }) 
       metafield,
     })
     .then((res) => {
-      console.log(`Metafield for ${resource}/${resourceId} updated.`);
+      console.log(`Metafield for ${resource}/${resourceId} with namespace: ${namespace} and key: ${key} updated.`);
     })
     .catch((error) => {
       console.error(error);
@@ -75,7 +77,34 @@ const bulkCreate = (filePath) => {
     });
 };
 
+const googleCreate = async (spreadsheetId) => {
+  getMetafieldsFromGoogle(spreadsheetId).then(metafields => {
+    let index = 0;
+    
+    const interval = setInterval(() => {
+      const { resource, resourceId, key, namespace, type, ...value } = metafields[index];
+
+      create({
+        resource,
+        resourceId,
+        key,
+        namespace,
+        type,
+        value: JSON.stringify(value, null, 2),
+      });
+
+      index += 1;
+      if (index >= metafields.length) {
+        clearInterval(interval);
+      }
+    }, 500);
+  });
+
+}
+
+
 module.exports = {
   create,
   bulkCreate,
+  googleCreate,
 };
