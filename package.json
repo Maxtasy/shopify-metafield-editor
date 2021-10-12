@@ -1,8 +1,8 @@
 {
   "name": "node.js-metafield",
   "version": "1.0.0",
-  "description": "",
-  "main": "metafield-change.js",
+  "description": "This App creates/updates Shopify Metafields directly from Google Sheets.",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create": "node create-metafields.js"
@@ -12,6 +12,15 @@
   "dependencies": {
     "axios": "^0.21.1",
     "csv-parser": "^3.0.0",
-    "csvtojson": "^2.0.10"
-  }
+    "csvtojson": "^2.0.10",
+    "googleapis": "^87.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxtasy/shopify-metafield-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Maxtasy/shopify-metafield-editor/issues"
+  },
+  "homepage": "https://github.com/Maxtasy/shopify-metafield-editor#readme"
 }
