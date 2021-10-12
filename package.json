@@ -1,8 +1,8 @@
 {
   "name": "node.js-metafield",
   "version": "1.0.0",
-  "description": "What does this app do?",
-  "main": "metafield-change.js",
+  "description": "This App creates/updates Shopify Metafields directly from Google Sheets.",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create": "node create-metafields.js"
