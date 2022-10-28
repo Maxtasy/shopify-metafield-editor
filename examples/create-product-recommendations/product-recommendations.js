@@ -1,3 +1,5 @@
+// TODO: Check if the complementary product still exists. If not, don't add it.
+
 const fs = require('fs');
 
 const lines = fs.readFileSync('product-recommendations.csv').toString().split('\n');
@@ -13,10 +15,12 @@ lines.forEach((line, index) => {
 
   const cleanedComplementaryId = complementaryId.replace('\r', '');
 
-  jsonObject[productId].push({
-    count,
-    id: cleanedComplementaryId,
-  });
+  if (productId !== cleanedComplementaryId) {
+    jsonObject[productId].push({
+      count,
+      id: cleanedComplementaryId,
+    });
+  }
 });
 
 const newJsonFile = fs.writeFileSync('product-recommendations.json', JSON.stringify(jsonObject));

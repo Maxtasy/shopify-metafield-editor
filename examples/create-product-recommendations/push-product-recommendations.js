@@ -5,15 +5,17 @@ const { create } = require('./src/metafield-editor/create');
 const fileContent = fs.readFileSync('./product-recommendations.json').toString();
 const jsonData = JSON.parse(fileContent);
 
-Object.keys(jsonData).forEach((productId) => {
+let wait = 0;
+
+Object.keys(jsonData).forEach((productId, index) => {
   const productReferenceList = [];
 
   jsonData[productId].forEach((complementaryProduct, index) => {
-    if (index < 9) productReferenceList.push(`gid://shopify/Product/${complementaryProduct.id}`);
+    if (index < 10) productReferenceList.push(`"gid://shopify/Product/${complementaryProduct.id}"`);
   });
 
   create({
-    resource: 'product',
+    resource: 'products',
     resourceId: productId,
     key: 'product_recommendations',
     namespace: 'meta',

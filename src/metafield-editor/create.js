@@ -1,19 +1,17 @@
-const config = require('../../config.json');
 const axios = require('axios');
-
-const { apiKey, apiPassword, store, accessToken } = config;
 
 /**
  * Creates or updates a metafield.
  *
- * @param {string} resource The resource type.
- * @param {number} resourceId The resource ID.
- * @param {string} key The metafield key.
- * @param {string} namespace The metafield namespace.
- * @param {string} type The metafield type.
- * @param {string} value The value for the metafield.
+ * @param {Object} config -
+ * @param {String} resource - The resource type.
+ * @param {Number} resourceId - The resource ID.
+ * @param {String} key - The metafield key.
+ * @param {String} namespace - The metafield namespace.
+ * @param {String} type - The metafield type.
+ * @param {String} value - The value for the metafield.
  */
-const create = ({ resource, resourceId, key, namespace, type = 'json', value }) => {
+const create = (config, { resource, resourceId, key, namespace, type = 'json', value }) => {
   const metafield = {
     namespace,
     key,
@@ -26,22 +24,22 @@ const create = ({ resource, resourceId, key, namespace, type = 'json', value }) 
   if (!resource || resource == 'shop') {
     path = `/admin/api/2022-10/metafields.json`;
   } else {
-    path = `/admin/api/${resource}/${resourceId}/metafields.json`;
+    path = `/admin/api/2022-10/${resource}/${resourceId}/metafields.json`;
   }
 
   axios
     .post(
-      `https://${store}${path}`,
+      `https://${config.store}${path}`,
       {
         metafield,
       },
-      { headers: { 'X-Shopify-Access-Token': accessToken } }
+      { headers: { 'X-Shopify-Access-Token': config.accessToken } }
     )
-    .then((res) => {
-      console.log(`Metafield for ${resource}/${resourceId} created.`);
+    .then((response) => {
+      console.log(`Metafield for ${resource}/${resourceId} created.`, response);
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error.response.data.errors);
     });
 };
 
