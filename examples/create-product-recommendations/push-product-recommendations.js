@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const { create } = require('./src/metafield-editor/create');
+const { create } = require('../../src/metafield-editor/create');
 
 const fileContent = fs.readFileSync('./product-recommendations.json').toString();
 const jsonData = JSON.parse(fileContent);
